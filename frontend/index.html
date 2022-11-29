@@ -14,11 +14,15 @@
   </head>
 
   <body>
-    Welcome!
-    <h3>The request to the backend server has returned:</h3>
-    <!-- Here we are using simple html as placeholders, and using the js to populate the values -->
-    <p>In raw json: <span id="raw"></span></p>
-    <p>With the key name: <span id="key"></span></p>
-    <p>With the key value: <span id="value"></span></p>
+    <header>
+      <h1>Welcome to DD Diary</h1>
+    </header>
+    <main>
+      <p>Enter your password:</p>
+      <input type="password" name="password" />
+      <br />
+      <br />
+      <button onClick="submitPassword()">Unlock</button>
+    </main>
   </body>
 </html>
