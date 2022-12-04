@@ -1,0 +1,33 @@
+<!-- Template used from LAB07 in EECS1012 22F  -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Mocha Tests for a major post function before integrating it using
+      Node.express package
+    </title>
+    <link rel="stylesheet" href="../node_modules/mocha/mocha.css" />
+  </head>
+
+  <body>
+    <div id="mocha"></div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/chai/chai.js"></script>
+    <script>
+      mocha.setup("bdd");
+    </script>
+
+    <!-- loading codes to be tested -->
+    <script src="./processData.js"></script>
+    <!-- loading test codes -->
+    <script src="./testProcessData.js"></script>
+    <script>
+      mocha.run();
+    </script>
+  </body>
+</html>

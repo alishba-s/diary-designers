@@ -1,21 +1,3 @@
-// This is the start of your backend server. We will write server side code here
-
-//this is a node package that will help us create a server
-const express = require("express");
-//this is the main app. Apps can get complicated. For now, think of it as a place to store your routes
-const app = express();
-//this is the port we are going to listen on. Backend programs listen on ports to get information from other computers
-const PORT = 8000;
-
-/**
- * Remember how before I talked about listening on a port? We do that here. Our app "pauses" and waits for requests to come in.
- *
- * These requests can be from browsers, other computers in the cloud, or even your fridge!
- */
-app.listen(PORT, function () {
-  console.log(`Listening on port ${PORT}`);
-});
-
 /**
  * req Object Format :
  * {
@@ -76,12 +58,8 @@ let userSavedNote = null;
 /**
  * Post functions to process the requests from frontend.js.
  */
-app.post("/post", function (req, res) {
-  res.header("Access-Control-Allow-Origin", "*");
-  console.log("Received Data: ");
-
-  let data = JSON.parse(req.query["data"]);
-  console.log(data);
+function responseFunction(reqObject) {
+  let data = reqObject;
 
   if (data["action"] == "unlock") {
     if (data["password"] == USER_PASSWORD) {
@@ -103,12 +81,12 @@ app.post("/post", function (req, res) {
     // Update a note object
     USER_SAVED_NOTE = data["userUpdatedNote"];
   }
-  res.send(
-    JSON.stringify({
-      passwordBoolean: passwordBoolean,
-      wrongPasswordCount: wrongPasswordCount,
-      passwordHint: passwordHint,
-      userSavedNote: userSavedNote,
-    }),
-  );
-});
+  let resObject = {
+    passwordBoolean: passwordBoolean,
+    wrongPasswordCount: wrongPasswordCount,
+    passwordHint: passwordHint,
+    userSavedNote: userSavedNote,
+  };
+
+  return resObject;
+}

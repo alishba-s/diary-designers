@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>DD Diary</title>
+    <link rel="stylesheet" href="./diary_light.css" />
     <script
       src="https://code.jquery.com/jquery-3.6.1.min.js"
       integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
@@ -14,15 +15,69 @@
   </head>
 
   <body>
-    <header>
-      <h1>Welcome to DD Diary</h1>
-    </header>
-    <main>
-      <p>Enter your password:</p>
-      <input type="password" name="password" />
-      <br />
-      <br />
-      <button onClick="submitPassword()">Unlock</button>
-    </main>
+    <div id="locked">
+      <header>
+        <h1>Welcome to DD Diary</h1>
+      </header>
+      <main>
+        <p>Enter your password:</p>
+        <input type="password" id="input-box" name="password" />
+        <br />
+        <p id="passwordHint"></p>
+        <br />
+        <button onClick="unlockDiary()">Unlock</button>
+      </main>
+    </div>
+
+    <div id="unlocked">
+      <main id="content">
+        <table>
+          <td id="notespanel">
+            <div id="noteslist"></div>
+            <div id="addnote">
+              <button id="newnote" onclick="AddNote()">NEW NOTE</button>
+            </div>
+          </td>
+          <td id="textbox">
+            <input type="text" onchange="UpdateNote()" />
+          </td>
+          <td id="toolspanel">
+            <h5>FONT FORMATTING</h5>
+            <button id="smallbutton" onclick="ChangeStyles('b')">
+              <b>BOLD</b>
+            </button>
+            <button id="smallbutton" onclick="ChangeStyles('i')">
+              <em>ITALIC</em>
+            </button>
+            <button id="smallbutton" onclick="ChangeStyles('u')">
+              <u>UNDERLINE</u>
+            </button>
+            <button id="smallbutton" onclick="ChangeStyles('n')">
+              REMOVE STYLES
+            </button>
+            <select name="font" id="font" onchange="ChangeFont()">
+              <option value="Arial" style="font-family: 'Arial'">Arial</option>
+              <option value="Courier" style="font-family: 'Courier'">
+                Courier
+              </option>
+              <option
+                value="Times New Roman"
+                style="font-family: 'Times New Roman'"
+              >
+                Times New Roman
+              </option>
+              <option value="Impact" style="font-family: 'Impact'">
+                Impact
+              </option>
+            </select>
+            <select onchange="ChangeTheme()" name="theme" id="theme">
+              <option value="light">LIGHT THEME</option>
+              <option value="dark">DARK THEME</option>
+            </select>
+            <button id="lock" onClick="lockDiary()">LOCK diary</button>
+          </td>
+        </table>
+      </main>
+    </div>
   </body>
 </html>
