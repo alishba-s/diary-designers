@@ -1,0 +1,103 @@
+/*
+ * whole CSS for locked page
+ */
+
+#locked h1 {
+  font-family: Garamond, serif;
+}
+
+#locked {
+  background-color: lightgray;
+  text-align: center;
+  position: relative;
+  padding: 50px;
+  transform: translateY(12vw);
+}
+
+#input-box {
+  border-radius: 25px;
+}
+
+/*
+ * Visibility Initialization
+*/
+
+#passwordHint {
+  display: none;
+}
+
+#unlocked {
+  display: none;
+}
+
+/*
+ * Whole CSS for unlocked page
+*/
+#unlocked button {
+  width: 90%;
+}
+
+#unlocked .smallbutton {
+  width: 43%;
+  font-size: 70%;
+}
+
+#unlocked select {
+  width: 90%;
+  border: 0.2px solid black;
+}
+
+#unlocked table {
+  width: 100%;
+}
+
+#unlocked td {
+  border: 1px solid black;
+  position: relative;
+}
+
+#newnote,
+#lock {
+  background-color: lightgray;
+  font-weight: bold;
+  position: absolute;
+  bottom: 10px;
+  right: 5%;
+}
+
+#unlocked .note {
+  transform: translateY(-230px);
+}
+
+#unlocked tr {
+  height: 100vh;
+}
+
+#notespanel,
+#toolspanel {
+  width: 15%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#unlocked #textbox {
+  text-align: center;
+}
+
+#unlocked input {
+  width: 95%;
+  height: 95vh;
+  word-break: break-all;
+  overflow-wrap: break-word;
+  background-color: rgb(220, 220, 220);
+}
+
+#textboxTest {
+}
+
+h5,
+.smallbutton,
+#font,
+#theme {
+  transform: translateY(-230px);
+}
