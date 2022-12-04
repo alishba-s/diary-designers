@@ -174,6 +174,10 @@ function ChangeFont() {
 }
 
 //Change Style
+let bold = 0;
+let italic = 0;
+let underlined = 0;
+
 function ChangeStyles(style) {
   const bstyles = ["normal", "bold"];
   const istyles = ["normal", "italic"];
@@ -189,7 +193,9 @@ function ChangeStyles(style) {
     document.getElementsByTagName("input")[1].style.textDecoration =
       ustyles[underlined];
   } else {
-    bold = italic = underlined = 0;
+    bold = 0;
+    italic = 0;
+    underlined = 0;
     document.getElementsByTagName("input")[1].style.fontWeight = bstyles[bold];
     document.getElementsByTagName("input")[1].style.textDecoration =
       ustyles[underlined];
